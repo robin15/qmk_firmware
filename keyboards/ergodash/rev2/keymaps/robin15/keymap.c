@@ -16,11 +16,14 @@ enum custom_keycodes {
   ADJUST,
 };
 
-#define EISU LALT(KC_GRV)
-#define CT_AL_DE (LALT(LCTL(KC_DEL)))
+#define EISU      (LALT(KC_GRV))
+#define CT_AL_DE  (LALT(LCTL(KC_DEL)))
 #define RAISE_SPC (LT(RAISE,KC_SPC))
-#define SFT_SPC (SFT_T(KC_SPC))
-#define ALT_PSCR (ALT_T(KC_PSCR))
+#define SFT_SPC   (SFT_T(KC_SPC))
+#define ALT_PSCR  (ALT_T(KC_PSCR))
+#define CT_TB     (LCTL(KC_TAB))
+#define SFT_CT_TB (LSFT(LCTL(KC_TAB)))
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -39,31 +42,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [_QWERTY] = LAYOUT( \
     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,      KC_5,     KC_GRV,   KC_EQL,  KC_6,    KC_7,   KC_8,    KC_9,    KC_0,    KC_MINS, \
-	  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,     KC_QUOT,  KC_BSLS, KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC, \
-		KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,      KC_G,     KC_LBRC,  KC_RBRC, KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT, \
-		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,     ADJUST,   KC_DEL,  KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_UP,   KC_SLSH, \
-		KC_INS,  KC_LGUI, KC_LALT, EISU,    RAISE_SPC, LOWER,    CT_AL_DE, KC_ENT,  KC_BSPC, SFT_SPC, ALT_PSCR,   KC_LEFT, KC_DOWN, KC_RGHT  \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,     KC_QUOT,  KC_BSLS, KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC, \
+    KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,      KC_G,     KC_LBRC,  KC_RBRC, KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT, \
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,     ADJUST,   KC_DEL,  KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_UP,   KC_SLSH, \
+    KC_INS,  KC_LGUI, KC_LALT, EISU,    RAISE_SPC, LOWER,    CT_AL_DE, KC_ENT,  KC_BSPC, SFT_SPC, ALT_PSCR,   KC_LEFT, KC_DOWN, KC_RGHT  \
   ),
 
   /* Lower
    * ,----------------------------------------------------------------------------------------------------------------------.
-   * |      |      |      |      |      |      |      |                    |      |      |      |NumLck|   /  |   *  |   -  |
+   * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |                    |      |      |      |   7  |   8  |   9  |   +  |
+   * |      |      |      |      |      |      |      |                    |      | C+Tb |C+S+Tb|      |      |      |      |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |                    |      |  Up  |      |   4  |   5  |   6  |   ,  |
+   * |      |   1  |   2  |   3  |   4  |   5  |      |                    |      |   6  |   7  |   8  |   9  |   0  |      |
    * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |                    | Left | Down | Right|   1  |   2  |   3  |   =  |
+   * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
    * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
-   * |      |      |      |      ||||||||      |      |      ||||||||      |      |      ||||||||   0  |      |   .  |Enter |
+   * |      |      |      |      ||||||||      |      |      ||||||||      |      |      ||||||||      |      |      |      |
    * ,----------------------------------------------------------------------------------------------------------------------.
    */
-	[_LOWER] = LAYOUT( \
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NLCK, KC_PSLS, KC_PAST, KC_PMNS, \
-	  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_P7,   KC_P8,   KC_P9,   KC_PPLS, \
-		KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_P4,   KC_P5,   KC_P6,   KC_PCMM, \
-		KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_P1,   KC_P2,   KC_P3,   KC_PEQL, \
-		KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_P0,   KC_NO,   KC_PDOT, KC_PENT  \
+  [_LOWER] = LAYOUT( \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_NO, KC_NO, KC_NO,  \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   SFT_CT_TB, CT_TB,   KC_NO, KC_NO, KC_NO,  \
+    KC_NO,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,   KC_NO,   KC_6,    KC_7,      KC_8,    KC_9,  KC_0,  KC_NO,  \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_NO, KC_NO, KC_NO,  \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_NO, KC_NO, KC_NO  \
   ),
 
   /*
@@ -79,12 +82,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |      |      |      |      ||||||||      |      |      ||||||||      |PageDn|      ||||||||      |      |      |      |
    * ,----------------------------------------------------------------------------------------------------------------------.
    */
-	[_RAISE] = LAYOUT( \
-		KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PGDN, KC_NO,   KC_NO,   KC_NO,   KC_NO,         KC_F12,        \
+  [_RAISE] = LAYOUT( \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PGDN, KC_NO,   KC_NO,   KC_NO,   KC_NO,         KC_F12,        \
     KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_NO,   KC_NO,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,        KC_F11,        \
-		KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, RALT(KC_LEFT), RALT(KC_RGHT), \
-		KC_NO,   KC_1 ,   KC_2,    KC_3 ,   KC_4 ,   KC_5,    KC_NO,   KC_PGUP, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,          KC_NO,         \
-		KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PGDN, KC_PGUP, KC_NO,   KC_NO,   KC_NO,         KC_NO          \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, RALT(KC_LEFT), RALT(KC_RGHT), \
+    KC_NO,   KC_1 ,   KC_2,    KC_3 ,   KC_4 ,   KC_5,    KC_NO,   KC_PGUP, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,          KC_NO,         \
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PGDN, KC_PGUP, KC_NO,   KC_NO,   KC_NO,         KC_NO          \
   ),
 
   /* Adjust
