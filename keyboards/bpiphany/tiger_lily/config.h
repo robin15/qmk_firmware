@@ -26,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Bathroom Epiphanies
 #define PRODUCT         tiger_lily
-#define DESCRIPTION     Tiger Lily controller for the Filco Majestouch 2
 
 /*
  * Frosty Flake Rev. 20140521 made by Bathroom Ephiphanies
@@ -44,8 +43,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #define UNUSED_PINS { B0, C4, D3 }
 
+#define LED_NUM_LOCK_PIN C5
+#define LED_CAPS_LOCK_PIN C6
+#define LED_SCROLL_LOCK_PIN B7
+#define LED_PIN_ON_STATE 0
+
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE

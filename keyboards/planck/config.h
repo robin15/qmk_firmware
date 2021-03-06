@@ -25,7 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x6060
 #define MANUFACTURER    OLKB
 #define PRODUCT         Planck
-#define DESCRIPTION     A compact ortholinear keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 4
@@ -42,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QMK_SPEAKER C6
 
 #define AUDIO_VOICES
-#define C6_AUDIO
+#define AUDIO_PIN C6
 
 #define BACKLIGHT_PIN B7
 
@@ -56,7 +55,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BACKLIGHT_LEVELS 3
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE

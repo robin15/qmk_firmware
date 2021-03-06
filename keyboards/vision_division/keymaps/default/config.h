@@ -1,15 +1,13 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
-#include "../../config.h"
+// place overrides here
+
 #include "matrix_types.h"
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    IBNobody
-#define PRODUCT         Vision Division
-#define DESCRIPTION     Full / Split Keyboard
 
 #define MATRIX_ROWS     6
 #define MATRIX_ROW_PINS { C2, C3, F4, F5, F6, F7 }
@@ -77,5 +75,3 @@ KEYMAP_MASTER(MATRIX_LAYER,                      NUMERIC_NORMAL,          HOMING
       k601, k602, k603, k604, k605, k606, k607, k608, k609, k60A, KC_NO, KC_NO, k611, k612, k613, k614, k615, k616, k617, k618, k619, k61A, k61B, KC_NO  \
 )
 */
-
-#endif
